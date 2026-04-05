@@ -1,10 +1,13 @@
 package com.studios91.trabajopractico1;
 
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-public class MainActivityViewModel extends ViewModel {
+public class MainActivityViewModel extends AndroidViewModel {
 
     private Conversor conversor = new Conversor();
 
@@ -12,7 +15,8 @@ public class MainActivityViewModel extends ViewModel {
     private MutableLiveData<String> error = new MutableLiveData();
     private MutableLiveData<Double> tasaActual = new MutableLiveData();
 
-    public MainActivityViewModel(){
+    public MainActivityViewModel(@NonNull Application application){
+        super(application);
         tasaActual.setValue(conversor.getTasaDeCambio());
     }
 
