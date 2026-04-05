@@ -11,7 +11,6 @@ public class Conversor {
         this.tasaDeCambio = nuevaTasa;
     }
 
-    // Lógica pura de negocio: solo cálculos matemáticos
     public double convertirAEuros(double dolares) {
         return dolares * tasaDeCambio;
     }
