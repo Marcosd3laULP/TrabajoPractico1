@@ -18,9 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.studios91.trabajopractico1.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-    //private EditText etCampoDolar, etCampoEuro, etTasaCambio;
-    //private Button btConvertir, btCambiarValor;
-    //private RadioButton rbDolar, rbEuro;
+
     private MainActivityViewModel viewModel;
     private ActivityMainBinding binding;
     @Override
@@ -33,22 +31,11 @@ public class MainActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this,
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()))
                 .get(MainActivityViewModel.class);
-        //inicializarVistas();
 
         configurarObservadores();
         configurarRadioGroup();
         configurarBotones();
     }
-
-    /*private void inicializarVistas(){
-        etCampoDolar = findViewById(R.id.etCampoDolar);
-        etCampoEuro = findViewById(R.id.etCampoEuro);
-        rbDolar = findViewById(R.id.rbDolar);
-        rbEuro = findViewById(R.id.rbEuro);
-        btConvertir = findViewById(R.id.btConvertir);
-        btCambiarValor = findViewById(R.id.btCambiarValor);
-        etTasaCambio = findViewById(R.id.etTasaCambio);
-    }*/
 
     private void configurarRadioGroup(){
         binding.radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
